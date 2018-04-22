@@ -1,6 +1,11 @@
 ﻿# Liraz Amir - Github Project
  this app was written in Visual Studio 2015 - Framework 4.5.2
  this app is a Single Page App that allows you to search for repositories at Github.
+ in the app you can search for a repository.
+ once you have results, the avatar's will display in a carousel along with the the user name and full repository name.
+ you can also bookmark that specific repo.
+ the bookmarking is done with ASP.NET Session, which means that if you refresh the page - all the bookmarks are gone.
+ and finally you have a popup window showing you all of your bookmarks.
  
  ## Running the app:
  1. download the project.
