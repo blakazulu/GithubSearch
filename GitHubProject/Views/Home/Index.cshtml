@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>Liraz Amir - GitHub</title>
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <!-- Font Awsome - for bookmark icon -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <!-- Angular JS for script and carousel swipe -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-touch.min.js"></script>
+    <!-- AngularJS Session - ngStorage -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+    <!-- local css and script -->
+    <link rel="stylesheet" type="text/css" href="~/Css/github.css">
+    <script type="text/javascript" src="~/SPA/Controllers/MainController.js"></script>
+    <!-- carousel css and script-->
+    <link rel="stylesheet" type="text/css" href="~/Css/angular-carousel.css">
+    <script type="text/javascript" src="~/Scripts/angular-carousel.min.js"></script>
+    <!-- AngularJS BootstrapUI-->
+   
+    <script type="text/javascript" src="~/Scripts/angular-rt-popup.min.js"></script>
+    
+</head>
+<body ng-controller="MainController" class="text-center info">
+    <!-- declaring the background was difficult with angularjs - had to use ng-style -->
+    <div style="height: 100vh; width: 100vw;" ng-style="{'background-image':'url({{backgroundImage}})', 'background-position': 'center', 'background-size': 'cover', 'background-repeat': 'no-repeat', 'min-height': '100vh'}">
+        <!-- Search input and button -->
+        
+        <div class="header-search col-3 mx-auto">
+            <div>
+                <form name="myForm" class="form-inline">
+                    <!-- Passing the input to the button with ng-model -->
+                    <input type="text" class="form-control form-control-lg mr-2" ng-model="repoName" placeholder="Enter repository name" required>
+                    <!-- Disabling the button if the input text is empty -->
+                    <!-- Calling function in controller with ng-click -->
+                    <button ng-click="getData(repoName)" ng-disabled="myForm.$invalid" class="text-center btn btn-dark btn-lg">Go!</button>
+                </form>
+            </div>
+            <button popup-show="/SPA/Views/popup.html" popup-shown="onShown()" popup-if="{{repositories.length > 0}}" popup-placement="bottom" 
+                    class="bookmark-button text-center btn btn-dark btn-lg">
+                Show Bookmarks
+            </button>
+        </div>
+        <div class="body-carousel col-12 mx-auto">
+            <div class="carousel-container">
+                <div class="carousel-hex text-center">
+                    <ul rn-carousel rn-carousel-controls rn-carousel-transition="hexagon" rn-carousel-index="carouselIndex" rn-carousel-buffered>
+                        <li ng-repeat="slide in slides track by slide.id">
+                            <div ng-style="{'background-image': 'url(' + slide.img + ')'}" class="bgimage">
+                            </div>
+                            <!-- Creating a container for overlay effect -->
+                            <div class="details">
+                                <label>Repository name: <span class="repo-info">{{ slide.shortName }} </span></label>
+                                <label>
+                                    Repository full name: <span class="repo-info">{{ slide.fullName }} </span>
+                                </label><br>
+                                <button class="btn btn-dark btn-lg bookmark-button" ng-click="bookmarkRepo(slide)">
+                                    <span>Bookmark </span>
+                                    <span class="far fa-bookmark" role="img"></span>
+                                </button>
+                            </div>
+                            <div class="details-footer">
+                                <span>Displaying repository no. {{ slide.id }} of {{slides.length}}</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

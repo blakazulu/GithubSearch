@@ -1,0 +1,21 @@
+﻿<div style="padding:1rem; background-color:#ffe5a6;">
+    <h3 class="popover-title">Your Bookmarks:</h3>
+
+    <div class="popover-content">
+        <table class="table table table-bordered table-dark table-hover text-center">
+            <tr>
+                <th>ID</th>
+                <th>User Name and Repository</th>
+                <th>Repository</th>
+                <th>Avatar</th>
+            </tr>
+            <tr ng-repeat="x in repositories">
+                <td>{{ x.id }}</td>
+                <td>{{ x.fullName }}</td>
+                <td>{{ x.shortName }}</td>
+                <td>{{ x.img }}</td>
+            </tr>
+        </table>
+        <button class="btn btn-dark btn-lg" ng-click="hidePopover()">Close</button>
+    </div>
+</div>

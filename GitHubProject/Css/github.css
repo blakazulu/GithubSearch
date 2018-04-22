@@ -1,0 +1,112 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+.info {
+    font-family: 'Montserrat';
+}
+
+.btn-lg {
+    margin: 0.3rem;
+}
+
+.header-search {
+    padding-top: 1rem;
+}
+
+.body-carousel {
+    height: 100%;
+}
+
+.carousel-container {
+    height: 95%;
+}
+
+.bgimage {
+    background-size: cover;
+    height: 100%;
+    background-position: center center;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+ul[rn-carousel] {
+    width: 400px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.carousel-hex {
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+}
+
+    .carousel-hex ul[rn-carousel] {
+        width: 80%;
+        height: 80%;
+    }
+
+.details {
+    text-align: center;
+    font-size: 1.8rem;
+    color: white;
+    text-shadow: 1px 1px black;
+    background-color: rgba(0, 102, 255, 0.1);
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+.details-footer {
+    text-align: center;
+    font-size: 1rem;
+    color: whitesmoke;
+    margin: 1rem;
+    text-shadow: 0.1px 0 #FFD700;
+    font-weight: lighter;
+}
+
+.repo-info {
+    font-weight: bold;
+}
+
+.bookmark-button {
+    position: relative;
+    color: #FFD700;
+    cursor: pointer;
+    /*Click effect*/
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    overflow: hidden;
+}
+
+    .bookmark-button:hover {
+        border-color: #FFD700;
+    }
+
+    .bookmark-button:after {
+        content: "";
+        background: #FFD700;
+        display: block;
+        position: absolute;
+        padding-top: 300%;
+        padding-left: 350%;
+        margin-left: -20px !important;
+        margin-top: -120%;
+        opacity: 0;
+        transition: all 0.8s;
+    }
+
+    .bookmark-button:active:after {
+        padding: 0;
+        margin: 0;
+        opacity: 1;
+        transition: 0s;
+    }
