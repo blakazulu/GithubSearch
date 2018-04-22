@@ -24,4 +24,4 @@
  by default all of the libraries used had to be customized both in apperance and functionality.
  
  ## Demo:
- [Demo](https://github.com/gsklee/ngStorage)
+ //todo - add demo gif
