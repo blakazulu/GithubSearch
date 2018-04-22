@@ -24,4 +24,6 @@
  by default all of the libraries used had to be customized both in apperance and functionality.
  
  ## Demo:
- //todo - add demo gif
+[Demo]( https://github.com/blakazulu/LirazAmirGithubProject/blob/master/lirazgithub.gif)
+ 
+
